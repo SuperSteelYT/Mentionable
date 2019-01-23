@@ -30,7 +30,7 @@ public class Mentionable extends JavaPlugin implements Listener
         String message = e.getMessage();
         for (Player player : Bukkit.getOnlinePlayers())
         {
-            if (message.contains("@" + player.getName()))
+            if (message.toLowerCase().contains("@" + player.getName().toLowerCase()))
             {
                 message = message.replace("@" + player.getName(), ChatColor.LIGHT_PURPLE + "@" + player.getName() + ChatColor.RESET);
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 4F, 1F);
